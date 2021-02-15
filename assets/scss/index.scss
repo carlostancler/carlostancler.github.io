@@ -1,0 +1,304 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+@mixin icon ( $id, $margin: 5px, $prop: "before", $font: "Free" ) {
+    &::#{$prop} {
+        position: relative;
+        bottom: -1px;
+
+        // Icon position.
+        @if ( $prop == "before" ) {
+            margin-right: $margin;
+        }
+        @else {
+            margin-left: $margin;
+        }
+
+        // Font settings
+        font-family: "Font Awesome 5 #{$font}";
+        @if ( $font == "Free" ) {
+            font-weight: 900;
+        }
+        @else {
+            font-weight: 400;
+        }
+
+        content: $id;
+        color: inherit;
+    }
+}
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin center {
+    margin: 0 auto;
+    width: 70%;
+}
+
+body,
+html {
+    margin: 0;
+    font-family: 'Lato';
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+.app {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+
+    .background {
+        position: fixed;
+        top: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/assets/img/background.jpg');
+        background-size: cover;
+    }
+}
+
+.container {
+    @include flex;
+    @include center;
+    height: 100%;
+}
+
+.contact-header {
+    position: relative;
+    height: 40px;
+    top: 0;
+    background: #000000;
+    color: #ffffff;
+    z-index: 1;
+
+    address {
+        @include flex;
+        font-style: normal;
+        height: 100%;
+
+        .social-link {
+            font-size: 1.4em;
+            color: #cccccc;
+
+            &:hover {
+                color: #ffffff;
+            }
+        }
+
+        &.contact {
+            color: #cccccc;
+            width: 500px;
+
+            .phones {
+                @include icon("\f879", 5px);
+
+                a:not(:nth-child(1)) {
+                    &::before {
+                        content: '|';
+                        margin: 0 5px;
+                    }
+                }
+            }
+
+            a[href^="mailto:"] {
+                @include icon("\f0e0", 10px);
+            }
+        }
+
+        &.social {
+            width: 100px;
+        }
+    }
+}
+
+.main {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+
+    .header {
+        z-index: 2;
+        position: sticky;
+        top: 0;
+        height: 60px;
+        background: #00000022;
+        color: #ffffff;
+        backdrop-filter: blur(8px);
+        transition: background .7s;
+
+        &.active {
+            background: #333333;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: 300;
+        }
+
+        .nav {
+            width: 500px;
+            font-size: 1.2em;
+            height: 100%;
+
+            .button {
+                cursor: pointer;
+                height: 100%;
+                align-items: center;
+                font-size: 1.2em;
+
+                &:hover {
+                    color: darken($color: #ffffff, $amount: 20);
+                }
+            }
+
+            .nav-links {
+                @include flex;
+                height: 100%;
+                margin: 0;
+
+                .link {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+
+                    &.dropdown {
+                        &:hover {
+                            &::after {
+                                content: '\25B2';
+                            }
+
+                            .dropdown-menu {
+                                display: block;
+                            }
+                        }
+
+                        &::after {
+                            position: relative;
+                            bottom: -1px;
+                            margin-left: 5px;
+                            font-size: .65em;
+                            content: '\25BC';
+                        }
+
+                        .dropdown-menu {
+                            display: none;
+                            position: absolute;
+                            width: calc(500px - 60px);
+                            background: #ffffffdd;
+                            color: #000000;
+                            box-shadow: 3px 0 25px -4px #000000bf;
+                            top: 100%;
+                            left: -1px;
+                            padding: 30px;
+                            z-index: 1;
+
+                            &:hover {
+                                background: #ffffff;
+                            }
+
+                            dd {
+                                margin-bottom: 15px;
+                                color: #666666;
+
+                                ul {
+                                    columns: 4;
+                                    padding-left: 0;
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            .dropdown-menu {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .banner,
+    .article {
+        @include center;
+        position: relative;
+    }
+
+    .banner {
+        z-index: 1;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        user-select: none;
+
+        &:not(.mini) {
+            height: calc(70vh - 100px);
+        }
+
+        &.mini {
+            height: calc(50vh - 100px);
+        }
+
+        .title {
+            font-size: 6em;
+            margin: 0;
+        }
+
+        .subtitle {
+            font-size: 1.6em;
+            margin-bottom: 0;
+        }
+    }
+
+    .article {
+        padding-bottom: 40px;
+        background: #ffffff;
+
+        .article-header {
+            text-align: center;
+
+            .subtitle {
+                font-family: 'Alata';
+                letter-spacing: 2pt;
+                font-size: 3em;
+                padding-top: 1em;
+                padding-bottom: .3em;
+                margin: 0;
+            }
+        }
+
+        section {
+            .section-title {
+                text-align: center;
+                font-family: "Alata";
+                font-size: 2.3em;
+                margin: 0;
+            }
+        }
+    }
+}
+
+@import 'pages';
+@import 'queries';

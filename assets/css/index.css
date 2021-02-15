@@ -1,0 +1,517 @@
+@charset "UTF-8";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+body,
+html {
+  margin: 0;
+  font-family: "Lato";
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.app {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+.app .background {
+  position: fixed;
+  top: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/img/background.jpg");
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 70%;
+  height: 100%;
+}
+
+.contact-header {
+  position: relative;
+  height: 40px;
+  top: 0;
+  background: #000000;
+  color: #ffffff;
+  z-index: 1;
+}
+.contact-header address {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-style: normal;
+  height: 100%;
+}
+.contact-header address .social-link {
+  font-size: 1.4em;
+  color: #cccccc;
+}
+.contact-header address .social-link:hover {
+  color: #ffffff;
+}
+.contact-header address.contact {
+  color: #cccccc;
+  width: 500px;
+}
+.contact-header address.contact .phones::before {
+  position: relative;
+  bottom: -1px;
+  margin-right: 5px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "";
+  color: inherit;
+}
+.contact-header address.contact .phones a:not(:nth-child(1))::before {
+  content: "|";
+  margin: 0 5px;
+}
+.contact-header address.contact a[href^="mailto:"]::before {
+  position: relative;
+  bottom: -1px;
+  margin-right: 10px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "";
+  color: inherit;
+}
+.contact-header address.social {
+  width: 100px;
+}
+
+.main {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+}
+.main .header {
+  z-index: 2;
+  position: sticky;
+  top: 0;
+  height: 60px;
+  background: #00000022;
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+  transition: background 0.7s;
+}
+.main .header.active {
+  background: #333333;
+}
+.main .header .logo {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+.main .header .nav {
+  width: 500px;
+  font-size: 1.2em;
+  height: 100%;
+}
+.main .header .nav .button {
+  cursor: pointer;
+  height: 100%;
+  align-items: center;
+  font-size: 1.2em;
+}
+.main .header .nav .button:hover {
+  color: #cccccc;
+}
+.main .header .nav .nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  margin: 0;
+}
+.main .header .nav .nav-links .link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.main .header .nav .nav-links .link.dropdown:hover::after {
+  content: "▲";
+}
+.main .header .nav .nav-links .link.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.main .header .nav .nav-links .link.dropdown::after {
+  position: relative;
+  bottom: -1px;
+  margin-left: 5px;
+  font-size: 0.65em;
+  content: "▼";
+}
+.main .header .nav .nav-links .link.dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  width: calc(500px - 60px);
+  background: #ffffffdd;
+  color: #000000;
+  box-shadow: 3px 0 25px -4px #000000bf;
+  top: 100%;
+  left: -1px;
+  padding: 30px;
+  z-index: 1;
+}
+.main .header .nav .nav-links .link.dropdown .dropdown-menu:hover {
+  background: #ffffff;
+}
+.main .header .nav .nav-links .link.dropdown .dropdown-menu dd {
+  margin-bottom: 15px;
+  color: #666666;
+}
+.main .header .nav .nav-links .link.dropdown .dropdown-menu dd ul {
+  columns: 4;
+  padding-left: 0;
+}
+.main .header .nav .nav-links .link.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.main .banner,
+.main .article {
+  margin: 0 auto;
+  width: 70%;
+  position: relative;
+}
+.main .banner {
+  z-index: 1;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+.main .banner:not(.mini) {
+  height: calc(70vh - 100px);
+}
+.main .banner.mini {
+  height: calc(50vh - 100px);
+}
+.main .banner .title {
+  font-size: 6em;
+  margin: 0;
+}
+.main .banner .subtitle {
+  font-size: 1.6em;
+  margin-bottom: 0;
+}
+.main .article {
+  padding-bottom: 40px;
+  background: #ffffff;
+}
+.main .article .article-header {
+  text-align: center;
+}
+.main .article .article-header .subtitle {
+  font-family: "Alata";
+  letter-spacing: 2pt;
+  font-size: 3em;
+  padding-top: 1em;
+  padding-bottom: 0.3em;
+  margin: 0;
+}
+.main .article section .section-title {
+  text-align: center;
+  font-family: "Alata";
+  font-size: 2.3em;
+  margin: 0;
+}
+
+.article .questions {
+  padding: 20px 15%;
+}
+.article .questions .card {
+  position: relative;
+  width: calc(100% - 60px);
+  margin: 5px 0;
+  padding: 25px;
+}
+.article .questions .card p {
+  margin: 10px 0;
+}
+.article .questions .card .question {
+  font-family: "Alata";
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.article .questions .card:hover {
+  background: #00000015;
+}
+.article .contact {
+  padding: 20px 15%;
+}
+.article .contact p {
+  font-size: 1.1em;
+  text-indent: 50px;
+}
+.article .contact a {
+  color: #555555;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.article .contact-form {
+  padding: 20px 15%;
+  text-align: center;
+}
+.article .contact-form form {
+  position: relative;
+  top: 30px;
+  margin: 0 auto;
+  width: 100%;
+}
+.article .contact-form form .row {
+  width: 50%;
+  margin: 0 auto;
+}
+.article .contact-form form .row label {
+  font-size: 1.1em;
+  display: block;
+  margin: 5px;
+}
+.article .contact-form form .row input[type=text],
+.article .contact-form form .row input[type=email] {
+  width: 100%;
+}
+.article .contact-form form .row textarea {
+  resize: none;
+  width: 100% !important;
+  height: 10vw !important;
+}
+.article .contact-info {
+  padding: 20px 15%;
+  text-align: center;
+}
+.article .contact-info address {
+  font-style: normal;
+  font-size: 1.2em;
+}
+.article .contact-info address a {
+  display: block;
+}
+.article .contact-info address a.phone::before {
+  position: relative;
+  bottom: -1px;
+  margin-right: 5px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "";
+  color: inherit;
+}
+.article .contact-info address a.whatsapp::before {
+  position: relative;
+  bottom: -1px;
+  margin-right: 5px;
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+  content: "";
+  color: inherit;
+}
+.article .about {
+  padding: 20px 15%;
+}
+.article .about p {
+  font-size: 1.1em;
+  text-indent: 50px;
+}
+.article .about a {
+  color: #555555;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.article .class {
+  margin: 10px 0;
+  padding: 0 10%;
+  width: 80%;
+}
+.article .class .section-title {
+  user-select: none;
+  cursor: pointer;
+}
+.article .class .section-title:hover {
+  background: #00000022;
+}
+.article .class iframe {
+  width: 100%;
+  height: 0px;
+  border: 0;
+  transition: height 0.5s;
+}
+.article .class:not(.active) .section-title::after {
+  position: relative;
+  bottom: -1px;
+  margin-left: 10px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "";
+  color: inherit;
+}
+.article .class.active .section-title {
+  background: #00000022;
+}
+.article .class.active .section-title::after {
+  position: relative;
+  bottom: -1px;
+  margin-left: 10px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "";
+  color: inherit;
+}
+.article .class.active iframe {
+  height: 500px;
+}
+
+.s1170,
+.s920,
+.s770,
+.s666,
+.s480 {
+  display: none;
+}
+
+@media only screen and (max-width: 1170px) {
+  .container.u1170,
+.banner.u1170,
+.article.u1170 {
+    width: 90%;
+  }
+
+  section:not(.banner).u1170 {
+    padding: 0 7%;
+  }
+}
+@media only screen and (max-width: 920px) {
+  .container.u920,
+.banner.u920 {
+    width: 97%;
+  }
+
+  .article.u920 {
+    width: 100%;
+  }
+  .article.u920 section:not(.banner).u920 {
+    padding: 0 5%;
+  }
+  .article.u920 section:not(.banner).u920.contact-form > form.u920 > .row {
+    width: 80%;
+  }
+
+  .h920 {
+    display: none;
+  }
+
+  .s920 {
+    display: initial;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .header.u770.menu-active {
+    background: #000000cc;
+  }
+
+  .nav.u770 {
+    width: 30px !important;
+  }
+  .nav.u770 .nav-links.u770 {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    width: 100vw;
+  }
+  .nav.u770 .nav-links.u770 .link.dropdown.u770::after,
+.nav.u770 .nav-links.u770 .link.dropdown.u770 .dropdown-menu.h770 {
+    display: none;
+  }
+  .nav.u770.active .nav-links.u770 {
+    background: #000000cc;
+    opacity: 1;
+    backdrop-filter: blur(8px);
+    height: calc(100vh - 100px);
+    flex-direction: column;
+    justify-content: space-evenly !important;
+    transition: opacity 0.5s;
+  }
+  .nav.u770.active .nav-links.u770 .link {
+    height: 40px !important;
+  }
+
+  .questions.u770 .card .question {
+    font-size: 16px !important;
+  }
+  .questions.u770 .card .answer {
+    margin: 0;
+  }
+
+  .class.u770 {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .s770 {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 666px) {
+  .h666 {
+    display: none !important;
+  }
+
+  .s666 {
+    display: block !important;
+  }
+
+  .contact-header .contact.u666 {
+    width: 100%;
+  }
+
+  .banner.u660 {
+    text-align: center;
+  }
+  .banner.u660 .banner-content {
+    width: 100%;
+  }
+  .banner.u660 .subtitle {
+    font-weight: lighter;
+    font-size: 1.3em;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .h480 {
+    display: none !important;
+  }
+
+  .banner.u480 .title {
+    font-size: 4em;
+  }
+}
+@media only screen and (max-height: 550px) {
+  .banner:not(.mini).u550h {
+    align-items: center;
+    height: calc(100vh - 100px);
+  }
+  .banner:not(.mini).u550h h2:first-of-type {
+    margin-top: 0;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,151 @@
+.article {
+    .questions {
+        padding: 20px 15%;
+
+        .card {
+            position: relative;
+            width: calc(100% - 60px);
+            margin: 5px 0;
+            padding: 25px;
+
+            p {
+                margin: 10px 0;
+            }
+
+            .question {
+                font-family: "Alata";
+                font-size: 1.3em;
+                font-weight: bold;
+            }
+
+            &:hover {
+                background: #00000015;
+            }
+        }
+    }
+
+    .contact {
+        padding: 20px 15%;
+
+        p {
+            font-size: 1.1em;
+            text-indent: 50px;
+        }
+
+        a {
+            color: #555555;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    }
+
+    .contact-form {
+        padding: 20px 15%;
+        text-align: center;
+
+        form {
+            position: relative;
+            top: 30px;
+            margin: 0 auto;
+            width: 100%;
+
+            .row {
+                width: 50%;
+                margin: 0 auto;
+
+                label {
+                    font-size: 1.1em;
+                    display: block;
+                    margin: 5px;
+                }
+
+                input[type="text"],
+                input[type="email"] {
+                    width: 100%;
+                }
+
+                textarea {
+                    resize: none;
+                    width: 100% !important;
+                    height: 10vw !important;
+                }
+            }
+        }
+    }
+
+    .contact-info {
+        padding: 20px 15%;
+        text-align: center;
+
+        address {
+            font-style: normal;
+            font-size: 1.2em;
+
+            a {
+                display: block;
+
+                &.phone {
+                    @include icon("\f879", 5px);
+                }
+
+                &.whatsapp {
+                    @include icon("\f232", 5px, $font: "Brands");
+                }
+            }
+        }
+    }
+
+    .about {
+        padding: 20px 15%;
+
+        p {
+            font-size: 1.1em;
+            text-indent: 50px;
+        }
+
+        a {
+            color: #555555;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    }
+
+    .class {
+        margin: 10px 0;
+        padding: 0 10%;
+        width: 80%;
+
+        .section-title {
+            user-select: none;
+            cursor: pointer;
+
+            &:hover {
+                background: #00000022;
+            }
+        }
+
+        iframe {
+            width: 100%;
+            height: 0px;
+            border: 0;
+            transition: height .5s;
+        }
+
+        &:not(.active) {
+            .section-title {
+                @include icon('\f107', 10px, 'after');
+            }
+        }
+
+        &.active {
+            .section-title {
+                @include icon('\f106', 10px, 'after');
+                background: #00000022;
+            }
+
+            iframe {
+                height: 500px;
+            }
+        }
+    }
+}
