@@ -273,7 +273,6 @@ ul {
     }
 
     .article {
-        padding-bottom: 40px;
         background: #ffffff;
 
         .article-header {
@@ -286,6 +285,18 @@ ul {
                 padding-top: 1em;
                 padding-bottom: .3em;
                 margin: 0;
+            }
+        }
+
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            background-color: #00000010;
+
+            a {
+                text-decoration: underline;
             }
         }
 

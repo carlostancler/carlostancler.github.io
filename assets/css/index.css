@@ -216,7 +216,6 @@ ul {
   margin-bottom: 0;
 }
 .main .article {
-  padding-bottom: 40px;
   background: #ffffff;
 }
 .main .article .article-header {
@@ -229,6 +228,16 @@ ul {
   padding-top: 1em;
   padding-bottom: 0.3em;
   margin: 0;
+}
+.main .article footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  background-color: #00000010;
+}
+.main .article footer a {
+  text-decoration: underline;
 }
 .main .article section .section-title {
   text-align: center;
