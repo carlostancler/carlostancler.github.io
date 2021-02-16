@@ -24,6 +24,41 @@
         }
     }
 
+    .team {
+        padding: 20px 15%;
+
+        .card {
+            position: relative;
+            width: calc(100% - 60px);
+            margin: 2px 0;
+            padding: 25px;
+
+            p, li {
+                margin: 10px 0;
+                font-size: 1.1em;
+            }
+
+            ul {
+                columns: 2;
+                padding-left: 0;
+
+                :nth-child(1) {
+                    margin-top: 0;
+                }
+            }
+
+            .person-title {
+                font-family: "Alata";
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+
+            &:hover {
+                background: #00000015;
+            }
+        }
+    }
+
     .contact {
         padding: 20px 15%;
 

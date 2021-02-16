@@ -257,6 +257,34 @@ ul {
 .article .questions .card:hover {
   background: #00000015;
 }
+.article .team {
+  padding: 20px 15%;
+}
+.article .team .card {
+  position: relative;
+  width: calc(100% - 60px);
+  margin: 2px 0;
+  padding: 25px;
+}
+.article .team .card p, .article .team .card li {
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+.article .team .card ul {
+  columns: 2;
+  padding-left: 0;
+}
+.article .team .card ul :nth-child(1) {
+  margin-top: 0;
+}
+.article .team .card .person-title {
+  font-family: "Alata";
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.article .team .card:hover {
+  background: #00000015;
+}
 .article .contact {
   padding: 20px 15%;
 }
@@ -502,6 +530,10 @@ ul {
 
   .banner.u480 .title {
     font-size: 4em;
+  }
+
+  .person-name.u480 {
+    margin-left: 0px !important;
   }
 }
 @media only screen and (max-height: 550px) {
