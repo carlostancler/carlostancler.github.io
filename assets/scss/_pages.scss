@@ -29,7 +29,7 @@
 
         .card {
             position: relative;
-            width: 100%;
+            width: calc(100% - 20px);
             margin: 2px 0;
             padding: 7px 10px;
 
