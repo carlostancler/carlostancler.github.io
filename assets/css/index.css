@@ -309,6 +309,7 @@ ul {
 .article .contact-form {
   padding: 20px 15%;
   text-align: center;
+  margin-bottom: 20px;
 }
 .article .contact-form form {
   position: relative;
