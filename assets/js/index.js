@@ -33,3 +33,12 @@ if ( location.pathname.startsWith('/salas') ) {
         });
     }
 }
+
+if ( location.pathname.startsWith('/duvidas') ) {
+    document.getElementById('video1').addEventListener('click', e => {
+        toggleClass(e.currentTarget, 'active');
+    });
+    document.getElementById('video2').addEventListener('click', e => {
+        toggleClass(e.currentTarget, 'active');
+    });
+}
