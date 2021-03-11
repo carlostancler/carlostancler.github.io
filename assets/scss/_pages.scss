@@ -151,6 +151,12 @@
         padding: 0 10%;
         width: 80%;
 
+        &.provas.active {
+            iframe {
+                height: 300px;
+            }
+        }
+
         .section-title {
             user-select: none;
             cursor: pointer;
@@ -184,5 +190,9 @@
                 height: 500px;
             }
         }
+    }
+
+    .empty {
+        height: 170px;
     }
 }

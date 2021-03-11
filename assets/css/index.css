@@ -381,6 +381,9 @@ ul {
   padding: 0 10%;
   width: 80%;
 }
+.article .class.provas.active iframe {
+  height: 300px;
+}
 .article .class .section-title {
   user-select: none;
   cursor: pointer;
@@ -417,6 +420,9 @@ ul {
 }
 .article .class.active iframe {
   height: 500px;
+}
+.article .empty {
+  height: 170px;
 }
 
 .s1170,

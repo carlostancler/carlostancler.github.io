@@ -42,3 +42,13 @@ if ( location.pathname.startsWith('/duvidas') ) {
         toggleClass(e.currentTarget, 'active');
     });
 }
+
+if ( location.pathname.startsWith('/provas') ) {
+    const sections = document.getElementsByClassName('section-title');
+    for ( let i = 0; i < sections.length; i++ ) {
+        const element = sections[i];
+        element.addEventListener('click', e => {
+            toggleClass(e.currentTarget.parentNode, 'active');
+        });
+    }
+}
